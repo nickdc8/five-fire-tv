@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Five — television, simply</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=VT323&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main id="tv">
+<video id="video" playsinline>
+</video>
+<section id="nostalgia-player" aria-label="Nostalgia video" hidden>
+<iframe id="nostalgia-frame" title="Nostalgia video" allow="autoplay; encrypted-media; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+</iframe>
+<div class="nostalgia-overlay">
+<span id="nostalgia-title">Nostalgia</span>
+<a id="nostalgia-fallback" href="https://www.youtube.com" target="_blank" rel="noopener noreferrer">Open on YouTube ↗</a>
+<button id="nostalgia-exit" type="button">Back to Five</button>
+</div>
+</section>
+<div id="osd" aria-live="polite">
+<b id="number">1</b>
+<span id="channel">BBC1</span>
+</div>
+<div id="muted" aria-hidden="true">MUTE</div>
+<div id="volume" role="status" aria-label="Volume" hidden>
+<div class="volume-top">
+<span>Volume</span>
+<b id="volume-level">15</b>
+</div>
+<div id="bars">
+</div>
+</div>
+<section id="message" aria-live="polite">
+<canvas id="snow" width="240" height="180" aria-hidden="true">
+</canvas>
+<span class="eyebrow">FIVE / LIVE TELEVISION</span>
+<h1 id="heading">Television, simply.</h1>
+<p id="detail">Five channels. Nothing to browse.</p>
+<button id="start">Switch on</button>
+<button id="retry" hidden>Try again</button>
+</section>
+<nav id="controls" aria-label="TV controls">
+<div class="brand">five<span class="led">
+</span>
+</div>
+<div id="channels" aria-label="Channels">
+</div>
+<div class="menu-wrap">
+<button id="menu-toggle" type="button" aria-expanded="false" aria-controls="feature-menu">Menu</button>
+<div id="feature-menu" class="feature-menu" hidden>
+<button id="nostalgia-toggle" type="button" aria-expanded="false" aria-controls="nostalgia-menu">Nostalgia ›</button>
+<button id="quieter" type="button" aria-label="Volume down">Volume −</button>
+<button id="louder" type="button" aria-label="Volume up">Volume +</button>
+<button id="mute" type="button" aria-label="Mute audio">Mute</button>
+<button id="setup" type="button">Settings</button>
+</div>
+<div id="nostalgia-menu" class="feature-menu" hidden>
+<button id="nostalgia-back" type="button">‹ Menu</button>
+<button type="button" data-nostalgia-random>Random UK 80s/90s TV</button>
+<button type="button" data-nostalgia-id="Ni77PBKVZwQ" data-nostalgia-title="80s UK Adverts · 1 Hour">80s UK Adverts · 1 Hour</button>
+<button type="button" data-nostalgia-id="73kcb1lisUU" data-nostalgia-title="90s UK Adverts · 1 Hour">90s UK Adverts · 1 Hour</button>
+</div>
+</div>
+</nav>
+<div id="flash" aria-hidden="true">
+</div>
+</main>
+<dialog id="settings">
+<form id="form">
+<div class="dialog-top">
+<h2>Settings</h2>
+<button type="button" id="close" aria-label="Close settings">×</button>
+</div>
+<p>Use HTTPS HLS (.m3u8), DASH (.mpd), or MP4 sources that permit browser playback. Sources are saved on this browser.</p>
+<div id="fields">
+</div>
+<label class="check">
+<input id="demo" type="checkbox"> Test with a sample video on all five buttons</label>
+<p class="note">Sample mode plays the same test film on each channel. It is not live TV. Public streams may be unavailable, region restricted, or blocked by browser security.</p>
+<div class="actions">
+<button type="button" id="reset">Restore defaults</button>
+<button type="submit">Save channels</button>
+</div>
+<p class="note">Keyboard: 1–5 · ↑/↓ · +/− volume · M mute · S settings. Esc closes menus. Click the picture to show controls.</p>
+</form>
+</dialog>
+<script src="hls.min.js">
+</script>
+<script src="dash.all.min.js">
+</script>
+<script src="app.js">
+</script>
+</body>
+</html>

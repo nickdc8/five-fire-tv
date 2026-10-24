@@ -1,0 +1,27 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    namespace 'tv.five.fire'
+    compileSdk 36
+
+    defaultConfig {
+        applicationId 'tv.five.fire'
+        minSdk 23
+        targetSdk 28
+        versionCode 1
+        versionName '0.1.0'
+    }
+
+    sourceSets {
+        main.assets.srcDirs += ['../../dist']
+    }
+}
+
+dependencies {
+    implementation 'androidx.media3:media3-exoplayer:1.11.1'
+    implementation 'androidx.media3:media3-exoplayer-dash:1.11.1'
+    implementation 'androidx.media3:media3-exoplayer-hls:1.11.1'
+    implementation 'androidx.webkit:webkit:1.15.0'
+}
