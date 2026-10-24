@@ -34,15 +34,15 @@ Nostalgia plays selected YouTube archive videos inside Five. Up/down and Select 
 
 ## Get started
 
-See [Fire TV build, install, and connection instructions](firetv/README.md). In short, build and install the APK, start the local helper on the computer for channels 4 and 5, and run `scripts/connect-fire-tv.sh` to establish the Fire TV tunnel.
+See [Fire TV build, install, and connection instructions](firetv/README.md). In short, build and install the APK, start the local helper on an always-on computer for channels 4 and 5, and run `scripts/connect-fire-tv.sh` on that same machine to establish the Fire TV tunnel. In my setup, an always-on Raspberry Pi runs the helper and ADB tunnel, so the Mac can be off while Five is in use.
 
-If the Stick disconnects or ADB restarts, ADB removes its reverse tunnel. Run `./scripts/connect-fire-tv.sh <device-serial> --launch` again. The script checks the helper, recreates `adb reverse tcp:4186 tcp:4186`, and verifies the mapping before reopening Five.
+If the Stick disconnects or ADB restarts, ADB removes its reverse tunnel. Run `./scripts/connect-fire-tv.sh <device-serial> --launch` again on the helper host. The script checks the helper, recreates `adb reverse tcp:4186 tcp:4186`, and verifies the mapping before reopening Five. For an always-on Pi, configure the helper and tunnel to start and reconnect at boot (for example, with systemd); reserve the Stick's IP address in the router so ADB can reconnect to it. The Pi and Stick must be on the same home network.
 
 ### Ask an AI assistant to install Five
 
 Open this repository in an AI coding assistant with terminal access, then paste:
 
-> Help me install this Five app on my own Fire TV Stick. Read the repository README and `firetv/README.md` first. Check which operating system this computer uses and whether JDK 17, Android SDK, Node.js, and ADB are available. Guide me through enabling ADB debugging on the Stick and connecting to it; ask me for its IP or serial if needed. Build the APK from this repository, install it on my Stick, start the local helper, and run `scripts/connect-fire-tv.sh <device-serial> --launch` so channels 4 and 5 can reach the helper. Verify the ADB reverse tunnel and help me try the channels. If channels 4 or 5 show no signal, check that the helper is running and rerun the connection script after any ADB reconnect. Channel 3 opens the official ITVX app; ITVX does not currently play inside Five. Do not ask me for account passwords or publish any of my device details.
+> Help me install this Five app on my own Fire TV Stick. Read the repository README and `firetv/README.md` first. Check which operating system this computer uses and whether JDK 17, Android SDK, Node.js, and ADB are available. Guide me through enabling ADB debugging on the Stick and connecting to it; ask me for its IP or serial if needed. Build the APK from this repository and install it on my Stick. For channels 4 and 5, ask whether I want to run the helper on this computer or on an always-on Raspberry Pi or other Linux host. Start the helper on that host, run `scripts/connect-fire-tv.sh <device-serial> --launch` there, and verify the ADB reverse tunnel. If I choose a Pi, guide me through copying `dist/` and `local-helper/`, enabling Node.js and ADB, and configuring the helper and tunnel to restart after reboot or disconnection. If channels 4 or 5 show no signal, check that the helper is running and restore the tunnel after any ADB reconnect. Channel 3 opens the official ITVX app; ITVX does not currently play inside Five. Do not ask me for account passwords or publish any of my device details.
 
 If the assistant cannot access a terminal or the Fire TV over ADB, have it walk you through the commands in `firetv/README.md`.
 

@@ -21,13 +21,13 @@ adb connect <fire-tv-ip>:5555
 adb install -r firetv/app/build/outputs/apk/debug/app-debug.apk
 ```
 
-Start the helper from the project root and leave it running:
+Start the helper from the project root on an always-on machine and leave it running:
 
 ```sh
 node local-helper/server.mjs
 ```
 
-In a second terminal, establish the device-to-computer tunnel:
+In a second terminal on that same machine, establish the device-to-helper tunnel:
 
 ```sh
 ./scripts/connect-fire-tv.sh
@@ -40,6 +40,19 @@ With multiple ADB devices, pass the Fire TV serial (for example `192.168.1.50:55
 ```
 
 The script checks that the helper is answering, creates `adb reverse tcp:4186 tcp:4186`, and verifies the tunnel. **ADB removes reverse tunnels when a device disconnects or ADB restarts.** Run the script again after reconnecting the Stick. The helper and tunnel are required for channels 4 and 5; the BBC channels do not use them.
+
+### Always-on Raspberry Pi setup
+
+The helper does not need to run on the computer used to build the APK. An always-on Raspberry Pi or other Linux computer on the same home network can host it; the Stick then reaches the helper through ADB reverse. This is the setup used for the author's Fire TV: the Pi keeps the helper and tunnel available while the Mac is off.
+
+To adapt this setup, install Node.js and Android platform-tools on the Pi, copy the repository's `dist/`, `local-helper/`, and `scripts/` directories while keeping their relative locations, enable ADB debugging on the Stick, and connect the Pi to the Stick:
+
+```sh
+adb connect <fire-tv-ip>:5555
+node local-helper/server.mjs
+```
+
+In another Pi terminal, run `./scripts/connect-fire-tv.sh <fire-tv-ip>:5555 --launch` from the project root. Keep the helper running. Configure both the helper and the ADB connection/tunnel to start on boot and recover after disconnects (for example, with systemd). A DHCP reservation for the Stick makes the Pi's reconnect target stable. The helper remains bound to `127.0.0.1`; do not expose port 4186 on the home network. The helper uses no ITV login, browser cookie, or personal account session.
 
 ## Remote
 
