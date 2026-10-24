@@ -8,6 +8,16 @@ Five is a deliberately simple live TV app for Android-based Fire TV Sticks. It r
 
 It is designed for people who prefer a small, familiar set of choices, including older viewers and people experiencing changes in memory or attention. A family member or trusted helper can set it up. Five is not a medical product, and it does not uninstall or disable Fire OS apps: “debloat” here means a simpler TV viewing experience.
 
+## Screenshots
+
+These are cropped captures of the web preview. The Fire TV app uses the same Five screen and adds native remote and video playback support.
+
+![Five start screen](screenshots/start-screen.png)
+
+![Five playing BBC One with channel controls](screenshots/channel-one.png)
+
+![Five menu with Nostalgia and settings options](screenshots/menu-and-nostalgia.png)
+
 ## What works
 
 | Remote key | Channel | Playback in Five |
@@ -27,6 +37,14 @@ Nostalgia plays selected YouTube archive videos inside Five. Up/down and Select 
 See [Fire TV build, install, and connection instructions](firetv/README.md). In short, build and install the APK, start the local helper on the computer for channels 4 and 5, and run `scripts/connect-fire-tv.sh` to establish the Fire TV tunnel.
 
 If the Stick disconnects or ADB restarts, ADB removes its reverse tunnel. Run `./scripts/connect-fire-tv.sh <device-serial> --launch` again. The script checks the helper, recreates `adb reverse tcp:4186 tcp:4186`, and verifies the mapping before reopening Five.
+
+### Ask an AI assistant to install Five
+
+Open this repository in an AI coding assistant with terminal access, then paste:
+
+> Help me install this Five app on my own Fire TV Stick. Read the repository README and `firetv/README.md` first. Check which operating system this computer uses and whether JDK 17, Android SDK, Node.js, and ADB are available. Guide me through enabling ADB debugging on the Stick and connecting to it; ask me for its IP or serial if needed. Build the APK from this repository, install it on my Stick, start the local helper, and run `scripts/connect-fire-tv.sh <device-serial> --launch` so channels 4 and 5 can reach the helper. Verify the ADB reverse tunnel and help me try the channels. If channels 4 or 5 show no signal, check that the helper is running and rerun the connection script after any ADB reconnect. Channel 3 opens the official ITVX app; ITVX does not currently play inside Five. Do not ask me for account passwords or publish any of my device details.
+
+If the assistant cannot access a terminal or the Fire TV over ADB, have it walk you through the commands in `firetv/README.md`.
 
 ## Fire TV compatibility
 
