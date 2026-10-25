@@ -38,6 +38,28 @@ See [Fire TV build, install, and connection instructions](firetv/README.md). In 
 
 If the Stick disconnects or ADB restarts, ADB removes its reverse tunnel. Run `./scripts/connect-fire-tv.sh <device-serial> --launch` again on the helper host. The script checks the helper, recreates `adb reverse tcp:4186 tcp:4186`, and verifies the mapping before reopening Five. For an always-on Pi, configure the helper and tunnel to start and reconnect at boot (for example, with systemd); reserve the Stick's IP address in the router so ADB can reconnect to it. The Pi and Stick must be on the same home network.
 
+### Deployed Pi services
+
+This repository is the source of truth for Five, replacing the earlier `five-tv` browser prototype. The Fire TV app is installed as `tv.five.fire` and can run alongside the Omarchy TV launcher.
+
+The existing Raspberry Pi deployment was inspected on 25 October 2026. Its runtime is in `~/five-fire-tv-runtime`, containing `dist/` and `local-helper/`. Two system services keep it available:
+
+- `five-fire-tv-helper.service` runs Node.js with `local-helper/server.mjs`, listening only on `127.0.0.1:4186`, and restarts on failure.
+- `five-fire-tv-adb-tunnel.service` runs `/usr/local/bin/five-fire-tv-adb-tunnel`. Every 15 seconds, the script reconnects to the Stick and restores `adb reverse tcp:4186 tcp:4186`. Its target is configured through `FIVE_FIRE_TV_DEVICE` in the service. The service restarts automatically.
+
+Both services were active when inspected; this does not establish uninterrupted playback. The tunnel makes the Stick's `127.0.0.1:4186` reach the Pi helper, so the development computer can be switched off.
+
+For this deployment, run these checks on the Pi if channels 4 and 5 lose signal:
+
+```sh
+systemctl status five-fire-tv-helper.service five-fire-tv-adb-tunnel.service
+journalctl -u five-fire-tv-helper.service -u five-fire-tv-adb-tunnel.service -n 50 --no-pager
+curl --fail http://127.0.0.1:4186/api/health
+adb -s <fire-tv-ip>:5555 reverse --list
+```
+
+The reverse list should contain `tcp:4186 tcp:4186`. Check the service configuration with `systemctl cat five-fire-tv-helper.service five-fire-tv-adb-tunnel.service` if the runtime path or device address changes. These service names describe the existing deployment; a new installation must configure its own services as described in the [Pi setup instructions](firetv/README.md#always-on-raspberry-pi-setup).
+
 ### Ask an AI assistant to install Five
 
 Open this repository in an AI coding assistant with terminal access, then paste:
