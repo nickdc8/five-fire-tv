@@ -1,12 +1,32 @@
 # Five for Fire TV
 
-> **80s & 90s UK TV is back!**
+> A little of what television used to feel like.
 
 ![Five retro television banner](firetv/app/src/main/res/drawable-nodpi/five_banner.png)
 
-Five is a deliberately simple live TV app for Android-based Fire TV Sticks. It replaces a busy viewing screen with five numbered choices, remote-first controls, and a Nostalgia section for UK archive clips and advert compilations.
+I grew up with four television channels. You switched on the TV, pressed a number on the remote, and watched whatever was on.
 
-It is designed for people who prefer a small, familiar set of choices, including older viewers and people experiencing changes in memory or attention. A family member or trusted helper can set it up. Five is not a medical product, and it does not uninstall or disable Fire OS apps: “debloat” here means a simpler TV viewing experience.
+Sometimes you had no idea what you were watching. You didn’t know when it had started, when it would finish, or what would come next. Unless you had a listings magazine to hand, you discovered it as you went. There was something lovely about that mystery.
+
+Five is a nostalgic return to that experience, with the five familiar UK channels many of us came to know. No programme guide, recommendations, or endless catalogue to browse. Just a handful of channels and a remote control.
+
+## Why simplicity matters
+
+Somewhere along the way, watching television became complicated. Turning on a modern smart TV can mean navigating accounts, apps, subscriptions, recommendations, and menus before reaching a programme.
+
+For some people, that is frustrating. For others, particularly older viewers and people experiencing cognitive decline, it can make a familiar daily pleasure difficult or impossible to access independently. A device they once used without thinking can become something they need help to operate.
+
+That matters. Watching television should not require someone to keep learning a new interface.
+
+Five is built around a small, familiar set of choices. Press a number, change the channel, watch television. A family member or trusted helper can handle the setup, keeping the everyday viewing experience simple.
+
+## About the app
+
+Five is a deliberately simple live TV app for Android-based Fire TV Sticks, with five numbered channel choices and controls designed for a physical remote. An optional Nostalgia section brings together selected UK archive clips and advert compilations.
+
+It is an early proof of concept, shaped by nostalgia and a practical wish to make television easier to use. It is not a medical product, and its accessibility has not yet been formally evaluated.
+
+Five simplifies the viewing experience. It does not uninstall or disable Fire OS apps.
 
 ## Screenshots
 
