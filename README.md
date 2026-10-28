@@ -60,7 +60,7 @@ If the Stick disconnects or ADB restarts, ADB removes its reverse tunnel. Run `.
 
 ### Deployed Pi services
 
-This repository is the source of truth for Five, replacing the earlier `five-tv` browser prototype. The Fire TV app is installed as `tv.five.fire` and can run alongside the Omarchy TV launcher.
+This repository is the source of truth for Five, replacing the earlier `five-tv` browser prototype. The Fire TV app is installed as `tv.five.fire`.
 
 The existing Raspberry Pi deployment was inspected on 25 October 2026. Its runtime is in `~/five-fire-tv-runtime`, containing `dist/` and `local-helper/`. Two system services keep it available:
 
