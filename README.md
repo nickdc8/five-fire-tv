@@ -6,19 +6,15 @@
 
 I grew up with four television channels. You switched on the TV, pressed a number on the remote, and watched whatever was on.
 
-Sometimes you had no idea what you were watching. You didn’t know when it had started, when it would finish, or what would come next. Unless you had a listings magazine to hand, you discovered it as you went. There was something lovely about that mystery.
+You might not know what you were watching, when it had started, or what would come next. Without a listings magazine, you discovered it as you went. There was something lovely about that mystery.
 
-Five is a nostalgic return to that experience, with the five familiar UK channels many of us came to know. No programme guide, recommendations, or endless catalogue to browse. Just a handful of channels and a remote control.
+Five brings back that feeling with five familiar UK channels. No programme guide, recommendations, or endless catalogue—just a handful of channels and a remote.
 
 ## Why simplicity matters
 
-Somewhere along the way, watching television became complicated. Turning on a modern smart TV can mean navigating accounts, apps, subscriptions, recommendations, and menus before reaching a programme.
+Today, reaching a programme can mean finding your way through apps, accounts, subscriptions, recommendations, and menus. That can be frustrating for anyone. For older people, particularly those experiencing cognitive decline, it can turn a familiar pleasure into something difficult to do alone.
 
-For some people, that is frustrating. For others, particularly older viewers and people experiencing cognitive decline, it can make a familiar daily pleasure difficult or impossible to access independently. A device they once used without thinking can become something they need help to operate.
-
-That matters. Watching television should not require someone to keep learning a new interface.
-
-Five is built around a small, familiar set of choices. Press a number, change the channel, watch television. A family member or trusted helper can handle the setup, keeping the everyday viewing experience simple.
+Watching television shouldn’t require constantly learning a new interface. Five keeps the choices small and familiar: press a number, change the channel, watch. A family member or trusted helper can take care of the setup, leaving the everyday experience simple.
 
 ## About the app
 
@@ -48,7 +44,7 @@ In brief: enable ADB debugging on the Fire TV, build and install the APK, start 
 
 ### Ask an AI agent
 
-Open this repository in an AI agent that can use a terminal and ask:
+The easiest way to set it up is to put your computer and Fire TV on the same Wi-Fi, enable ADB debugging on the Fire TV, and open this repository in an AI agent with terminal access. The agent can build and install the app, then help connect the helper for channels 4 and 5. Ask it to:
 
 > Read `README.md` and `firetv/README.md`, then help me install Five on my Android-based Fire TV. Check the available build tools, enable/connect ADB with my help, build and install the APK, and launch it. For channels 4 and 5, check whether the local helper already runs on an always-on machine; if not, help me set it up and keep the ADB reverse tunnel available. Verify the channels and remote controls. Ask me for any device details you need, and never put passwords or private device details in the repository.
 
@@ -62,7 +58,9 @@ If the agent cannot access the Fire TV or terminal, it can guide you through the
 
 ## Status and compatibility
 
-This proof of concept has been tested on one Fire TV Stick, including playback through the Raspberry Pi helper. Broadcaster streams can change, and other Fire TV models and Fire OS versions still need testing. Five is an Android APK; it does not support Roku or Fire TV devices running Vega OS.
+This proof of concept has been tested on one Fire TV Stick, including playback through the Raspberry Pi helper. Broadcaster streams can change, and other models still need testing.
+
+Five is an Android APK for Fire OS. It will not run on Fire TV devices with Vega OS, including the **Fire TV Stick 4K Select (2025)** and newer **Fire TV Stick HD (2nd gen, 2026)** and **Fire TV Stick 4K (3rd gen, 2026)** models. Check the device’s operating system before buying; Amazon’s [Fire TV device specifications](https://developer.amazon.com/docs/fire-tv/device-specifications-fire-tv-streaming-media-player.html) list the OS by model. Roku is not supported either.
 
 ## Screenshots
 
