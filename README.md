@@ -58,7 +58,7 @@ If the agent cannot access the Fire TV or terminal, it can guide you through the
 
 ## Status and compatibility
 
-This proof of concept has been tested on one Fire TV Stick, including playback through the Raspberry Pi helper. Broadcaster streams can change, and other models still need testing.
+This proof of concept has been tested on two Fire TV Sticks, including playback through the Raspberry Pi helper. Broadcaster streams can change, and other models still need testing.
 
 Five is an Android APK for Fire OS. It will not run on Fire TV devices with Vega OS, including the **Fire TV Stick 4K Select (2025)** and newer **Fire TV Stick HD (2nd gen, 2026)** and **Fire TV Stick 4K (3rd gen, 2026)** models. Check the device’s operating system before buying; Amazon’s [Fire TV device specifications](https://developer.amazon.com/docs/fire-tv/device-specifications-fire-tv-streaming-media-player.html) list the OS by model. Roku is not supported either.
 
