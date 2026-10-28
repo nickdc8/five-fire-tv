@@ -1,8 +1,32 @@
 # Five for Fire TV
 
-Five is a simple, remote-controlled live TV app for Android-based Amazon Fire TV devices. It gives five familiar UK channels number buttons, plus a small Nostalgia section.
+> A little of what television used to feel like.
 
 ![Five retro television banner](firetv/app/src/main/res/drawable-nodpi/five_banner.png)
+
+I grew up with four television channels. You switched on the TV, pressed a number on the remote, and watched whatever was on.
+
+Sometimes you had no idea what you were watching. You didn’t know when it had started, when it would finish, or what would come next. Unless you had a listings magazine to hand, you discovered it as you went. There was something lovely about that mystery.
+
+Five is a nostalgic return to that experience, with the five familiar UK channels many of us came to know. No programme guide, recommendations, or endless catalogue to browse. Just a handful of channels and a remote control.
+
+## Why simplicity matters
+
+Somewhere along the way, watching television became complicated. Turning on a modern smart TV can mean navigating accounts, apps, subscriptions, recommendations, and menus before reaching a programme.
+
+For some people, that is frustrating. For others, particularly older viewers and people experiencing cognitive decline, it can make a familiar daily pleasure difficult or impossible to access independently. A device they once used without thinking can become something they need help to operate.
+
+That matters. Watching television should not require someone to keep learning a new interface.
+
+Five is built around a small, familiar set of choices. Press a number, change the channel, watch television. A family member or trusted helper can handle the setup, keeping the everyday viewing experience simple.
+
+## About the app
+
+Five is a deliberately simple live TV app for Android-based Fire TV devices, with five numbered channel choices and controls designed for a physical remote. An optional Nostalgia section brings together selected UK archive clips and advert compilations.
+
+It is an early proof of concept, shaped by nostalgia and a practical wish to make television easier to use. It is not a medical product, and its accessibility has not yet been formally evaluated.
+
+Five simplifies the viewing experience. It does not uninstall or disable Fire OS apps.
 
 ## Channels
 
@@ -38,9 +62,7 @@ If the agent cannot access the Fire TV or terminal, it can guide you through the
 
 ## Status and compatibility
 
-This is a proof of concept tested on one Fire TV Stick, including playback through the Raspberry Pi helper. Broadcaster streams can change, and other Fire TV models and Fire OS versions still need testing. Five is an Android APK; it does not support Roku or Fire TV devices running Vega OS.
-
-Five simplifies the viewing screen and remote flow. It does not uninstall, disable, or replace Fire OS system apps. It is not a medical product, and its accessibility has not been formally evaluated.
+This proof of concept has been tested on one Fire TV Stick, including playback through the Raspberry Pi helper. Broadcaster streams can change, and other Fire TV models and Fire OS versions still need testing. Five is an Android APK; it does not support Roku or Fire TV devices running Vega OS.
 
 ## Screenshots
 
