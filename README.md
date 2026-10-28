@@ -20,7 +20,7 @@ Watching television shouldn’t require constantly learning a new interface. Fiv
 
 Five is a deliberately simple live TV app for Android-based Fire TV devices, with five numbered channel choices and controls designed for a physical remote. An optional Nostalgia section brings together selected UK archive clips and advert compilations.
 
-It is an early proof of concept, shaped by nostalgia and a practical wish to make television easier to use. It is not a medical product, and its accessibility has not yet been formally evaluated.
+It is shaped by nostalgia and a practical wish to make television easier to use. It is not a medical product, and its accessibility has not yet been formally evaluated.
 
 Five simplifies the viewing experience. It does not uninstall or disable Fire OS apps.
 
@@ -58,7 +58,7 @@ If the agent cannot access the Fire TV or terminal, it can guide you through the
 
 ## Status and compatibility
 
-This proof of concept has been tested on two Fire TV Sticks, including playback through the Raspberry Pi helper. Broadcaster streams can change, and other models still need testing.
+Five is a working app that has been tested on two Fire TV Sticks, including playback through the Raspberry Pi helper. Broadcaster streams can change, and other models still need testing.
 
 Five is an Android APK for Fire OS. It will not run on Fire TV devices with Vega OS, including the **Fire TV Stick 4K Select (2025)** and newer **Fire TV Stick HD (2nd gen, 2026)** and **Fire TV Stick 4K (3rd gen, 2026)** models. Check the device’s operating system before buying; Amazon’s [Fire TV device specifications](https://developer.amazon.com/docs/fire-tv/device-specifications-fire-tv-streaming-media-player.html) list the OS by model. Roku is not supported either.
 
