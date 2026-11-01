@@ -81,7 +81,7 @@ body:not(.on) #volume{display:none!important}
 .led{background:var(--red);width:8px;height:8px;box-shadow:0 0 6px var(--red)}
 body.on .led{background:var(--green);box-shadow:0 0 6px var(--green)}
 .quiet #controls,.quiet #osd{opacity:0;pointer-events:none}
-.quiet #controls:focus-within:has(:focus-visible){opacity:1;pointer-events:auto}
+
 body.sample #osd:after{content:'SAMPLE VIDEO';font-size:24px;color:var(--yellow);align-self:center}
 
 /* switch-on: the beam opens out from a line */
