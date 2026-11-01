@@ -141,9 +141,13 @@ public final class MainActivity extends Activity {
         int keyCode = event.getKeyCode();
         if (youtubeRemoteControl && isYoutubeNavigationKey(keyCode)) {
             if (event.getAction() == KeyEvent.ACTION_DOWN && event.getRepeatCount() == 0) {
-                evaluate("window.fireTVRevealNostalgiaOverlay && window.fireTVRevealNostalgiaOverlay()");
+                String direction = keyCode == KeyEvent.KEYCODE_DPAD_LEFT ? "left"
+                        : keyCode == KeyEvent.KEYCODE_DPAD_RIGHT ? "right"
+                        : keyCode == KeyEvent.KEYCODE_DPAD_UP ? "up"
+                        : keyCode == KeyEvent.KEYCODE_DPAD_DOWN ? "down" : "select";
+                evaluate("window.fireTVNostalgiaKey && window.fireTVNostalgiaKey('" + direction + "')");
             }
-            return super.dispatchKeyEvent(event);
+            return true;
         }
         if (textEntryActive && (isChannelNumberKey(keyCode)
                 || keyCode == KeyEvent.KEYCODE_DPAD_UP

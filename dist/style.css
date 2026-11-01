@@ -12,12 +12,14 @@ video{height:100%;width:100%;object-fit:contain;filter:saturate(1.15) contrast(1
 #nostalgia-frame{position:absolute;inset:0;width:100%;height:100%;border:0;background:#000}
 .nostalgia-overlay{position:absolute;z-index:2;top:5%;left:5%;right:5%;display:flex;align-items:center;gap:12px;padding:8px 12px;background:#000b;color:var(--green);font-size:22px;text-shadow:2px 2px 0 #000}
 #nostalgia-title{margin-right:auto;text-transform:uppercase;letter-spacing:2px}
+.nostalgia-overlay{flex-wrap:wrap}
+html.firetv-native-playback .nostalgia-overlay a{display:none}
 .nostalgia-overlay a{color:var(--cyan);text-decoration:none}
 .nostalgia-overlay a:hover{text-decoration:underline}
 .nostalgia-overlay button{min-height:38px;padding:5px 10px;background:var(--menu);font-size:20px}
 body.nostalgia-overlay-hidden .nostalgia-overlay{opacity:0;pointer-events:none}
 .nostalgia-overlay{transition:opacity .18s ease}
-body.nostalgia-mode #osd,body.nostalgia-mode #muted{display:none}
+body.nostalgia-mode #controls,body.nostalgia-mode #osd,body.nostalgia-mode #muted{display:none}
 body.nostalgia-mode #message{visibility:hidden}
 
 /* standby / no signal / tuning */

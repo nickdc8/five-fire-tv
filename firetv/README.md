@@ -58,6 +58,7 @@ In another Pi terminal, run `./scripts/connect-fire-tv.sh <fire-tv-ip>:5555 --la
 
 - Number keys 1–5 select the matching channel.
 - Up/down navigate the open Menu and Nostalgia choices; Select activates an item.
+- In Nostalgia, an arrow or Select reveals playback controls. Use the arrows to choose Previous video, Next video, Play/Pause, or Back to Five, then Select to activate. Previous/Next appear for playlists. Controls hide after 2.5 seconds of inactivity. Captions are turned off when each video starts.
 - Back closes Five or returns from the ITVX app.
 - App-handled volume keys adjust playback and show Five’s green volume display. TV volume commands sent directly over infrared are handled by the television.
 

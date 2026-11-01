@@ -70,6 +70,19 @@ Five is an Android APK for Fire OS. It will not run on Fire TV devices with Vega
 
 ![Five menu with Nostalgia and settings options](screenshots/menu-and-nostalgia.png)
 
+### 90s UK Saturday Night TV
+
+Nostalgia → **90s UK Saturday Night TV · Playlist** plays this [unlisted YouTube playlist](https://www.youtube.com/playlist?list=PLezXIk2sLfvo) inside Five. It contains BBC continuity, Bruce Forsyth’s Generation Game (3 December 1994), Noel’s House Party (4 December 1993), Gladiators (18 September 1993), a Blind Date segment (November 1994), and Stars in Their Eyes (1993), with short LWT advert breaks. This is a curated evening across several dates and channels, inspired by [archive Saturday listings](https://tvrdb.com/listings/1993-11-27), rather than a reconstruction of one broadcast.
+
+The playlist was created with `gog yt` and can be edited without rebuilding Five. Keep it unlisted or public so the embedded player can access it. Videos were checked for embedding permission and UK region restrictions when selected; actual playback remains subject to YouTube availability. Back returns to live TV as with the individual Nostalgia clips.
+
+To inspect or extend it using your authenticated account:
+
+```sh
+gog yt playlists items list --playlist-id PLezXIk2sLfvo --all --json
+gog yt playlists add --playlist-id PLezXIk2sLfvo --video-id VIDEO_ID
+```
+
 ## License
 
 This repository has no blanket license for reuse. Notices for bundled hls.js and dash.js are in [`third-party-licenses/`](third-party-licenses/). Broadcaster streams and YouTube videos remain subject to their providers' terms.
